@@ -1,362 +1,511 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAYUSH GHISING | IT Engineer • Linux SysAdmin • Cybersecurity</title>
-    <meta name="description"
-        content="AAYUSH GHISING — IT Engineer, Linux System Administrator, and Cybersecurity Enthusiast in Nepal. RHCSA certified. Building resilient, secure, and optimized environments.">
-    <meta name="keywords"
-        content="Aayush Ghising, IT Engineer, Linux System Administrator, Cybersecurity, RHCSA, Nepal, RHEL, CentOS, SELinux, firewalld, iptables, system hardening">
-    <meta name="author" content="AAYUSH GHISING">
-    <meta name="theme-color" content="#05070f">
-
-    <meta property="og:title" content="AAYUSH GHISING | Cybersecurity Portfolio">
-    <meta property="og:description"
-        content="Premium cyber-themed portfolio — Linux systems, networking, hardening, and security learning.">
-    <meta property="og:type" content="website">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Aayush Ghising - Portfolio">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <title>Aayush Ghising - Cybersecurity Professional | Linux System Administrator</title>
+    <meta name="description" content="Aayush Ghising - IT Engineer, Linux System Administrator, and Cybersecurity Professional from Nepal">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
-                    },
-                    colors: {
-                        cyber: {
-                            bg: '#05070f',
-                            panel: 'rgba(255,255,255,0.06)',
-                            border: 'rgba(255,255,255,0.10)',
-                            blue: '#00c2ff',
-                            green: '#39ff14',
-                        }
-                    },
-                    boxShadow: {
-                        glow: '0 0 0 1px rgba(0,194,255,0.15), 0 20px 60px rgba(0,194,255,0.12)',
-                        glow2: '0 0 0 1px rgba(57,255,20,0.14), 0 20px 60px rgba(57,255,20,0.12)',
-                    }
-                }
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --bg-primary: #003153;
+            --bg-secondary: #002649;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --accent-color: #4fc3f7;
+            --accent-secondary: #29b6f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #003153 0%, #002649 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* iOS-specific fixes */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                -webkit-text-size-adjust: 100%;
+                -webkit-tap-highlight-color: transparent;
             }
         }
-    </script>
+        
+        /* Video iOS fixes */
+        video {
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+        }
+        
+        video::-webkit-media-controls-panel {
+            display: flex !important;
+        }
+        
+        /* iOS button fixes */
+        button, .btn-primary, .btn-secondary {
+            -webkit-appearance: none;
+            appearance: none;
+            -webkit-tap-highlight-color: transparent;
+            cursor: pointer;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .bg-white-glass {
+            background: transparent;
+            backdrop-filter: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(79, 195, 247, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(79, 195, 247, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            padding: 14px 28px;
+            border: 2px solid #ffffff;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background: #ffffff;
+            color: #003153;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+        }
+        
+        .nav-transparent {
+            background: transparent;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #6366f1;
+            font-weight: 400;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .parallax-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.2));
+            animation: parallax 8s ease-in-out infinite;
+        }
+        
+        @keyframes parallax {
+            0%, 100% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+        
+        .skill-progress {
+            height: 6px;
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 3px;
+            transition: width 2s ease;
+        }
+        
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Dark theme styles */
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: #f9fafb;
+        }
+        
+        [data-theme="dark"] .nav-transparent {
+            background: rgba(31, 41, 55, 0.1);
+        }
+        
+        [data-theme="dark"] .bg-white-glass {
+            background: rgba(31, 41, 55, 0.9);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-theme="dark"] .btn-secondary {
+            color: #f9fafb;
+            border-color: #f9fafb;
+        }
+        
+        [data-theme="dark"] .btn-secondary:hover {
+            background: #f9fafb;
+            color: #1f2937;
+        }
+        
+        /* Prussian Blue theme adjustments */
+        .nav-transparent a {
+            color: #ffffff;
+        }
+        
+        .nav-transparent a:hover {
+            color: #4fc3f7;
+        }
+        
+        .nav-transparent .fa-github,
+        .nav-transparent .fa-linkedin,
+        .nav-transparent .fa-envelope {
+            color: #ffffff;
+        }
+        
+        .nav-transparent .fa-github:hover,
+        .nav-transparent .fa-linkedin:hover,
+        .nav-transparent .fa-envelope:hover {
+            color: #4fc3f7;
+        }
+        
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom cursor */
+        .cursor-glow {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
 </head>
-
-<body class="min-h-screen bg-cyber-bg text-slate-100 antialiased selection:bg-cyber-blue/30 selection:text-white">
-    <!-- Background / FX -->
-    <canvas id="bg-canvas" aria-hidden="true"></canvas>
-    <div id="cursor-glow" aria-hidden="true"></div>
-    <div id="scroll-progress" aria-hidden="true"></div>
-    <div class="floating-icons" aria-hidden="true">
-        <i class="fa-brands fa-linux"></i>
-        <i class="fa-solid fa-terminal"></i>
-        <i class="fa-solid fa-shield-halved"></i>
-        <i class="fa-solid fa-lock"></i>
-        <i class="fa-solid fa-microchip"></i>
-        <i class="fa-solid fa-network-wired"></i>
-    </div>
-
-    <!-- Nav -->
-    <nav id="navbar" class="fixed top-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-xl">
-        <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <a href="#hero" class="group inline-flex items-center gap-2 font-mono text-sm tracking-wider">
-                <span
-                    class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 shadow-glow transition group-hover:border-cyber-blue/40">
-                    <span class="font-bold text-cyber-blue">AG</span>
-                </span>
-                <span class="hidden sm:inline text-slate-200/90">AAYUSH GHISING</span>
-            </a>
-
-            <div class="hidden items-center gap-1 md:flex">
-                <a class="navlink" href="#about">About</a>
-                <a class="navlink" href="#experience">Experience</a>
-                <a class="navlink" href="#education">Education</a>
-                <a class="navlink" href="#certifications">Certifications</a>
-                <a class="navlink" href="#skills">Skills</a>
-                <a class="navlink" href="#learning">Learning</a>
-                <a class="navlink" href="#objective">Objective</a>
-                <a class="navlink" href="#contact">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-2">
-                <button id="theme-toggle"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200/90 transition hover:border-cyber-blue/40 hover:text-white"
-                    aria-label="Toggle theme">
-                    <i id="theme-icon" class="fa-solid fa-moon"></i>
-                </button>
-
-                <button id="mobile-toggle"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200/90 transition hover:border-cyber-blue/40 hover:text-white md:hidden"
-                    aria-label="Open menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden border-t border-white/10 bg-black/40 px-4 py-3 backdrop-blur-xl md:hidden">
-            <div class="grid gap-1">
-                <a class="navlink" href="#about">About</a>
-                <a class="navlink" href="#experience">Experience</a>
-                <a class="navlink" href="#education">Education</a>
-                <a class="navlink" href="#certifications">Certifications</a>
-                <a class="navlink" href="#skills">Skills</a>
-                <a class="navlink" href="#learning">Learning</a>
-                <a class="navlink" href="#objective">Objective</a>
-                <a class="navlink" href="#contact">Contact</a>
+<body class="bg-yellow-400">
+    <!-- Custom Cursor -->
+    <div class="cursor-glow" id="cursor"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="#about" class="text-gray-800 hover:text-indigo-600 transition-colors font-medium">About</a>
+                    <a href="#experience" class="text-gray-800 hover:text-indigo-600 transition-colors font-medium">Experience</a>
+                    <a href="#skills" class="text-gray-800 hover:text-indigo-600 transition-colors font-medium">Skills</a>
+                    <a href="#certifications" class="text-gray-800 hover:text-indigo-600 transition-colors font-medium">Certifications</a>
+                    <a href="#contact" class="text-gray-800 hover:text-indigo-600 transition-colors font-medium">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/AayushGhising824" target="_blank" class="text-gray-800 hover:text-indigo-600 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank" class="text-gray-800 hover:text-indigo-600 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light" style="display: none;"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header id="hero" class="relative pt-28">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="grid items-center gap-10 lg:grid-cols-12">
-                <div class="lg:col-span-7">
-                    <div
-                        class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 font-mono text-xs tracking-widest text-slate-200/80 shadow-glow">
-                        <span
-                            class="inline-flex h-2 w-2 rounded-full bg-cyber-green shadow-[0_0_30px_rgba(57,255,20,0.55)]"></span>
-                        ONLINE • NEPAL • RHCSA
-                    </div>
-
-                    <h1
-                        class="mt-5 text-balance text-5xl font-extrabold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-                        AAYUSH
-                        <span
-                            class="block bg-gradient-to-r from-cyber-blue via-cyber-green to-cyber-blue bg-clip-text text-transparent">GHISING</span>
-                    </h1>
-
-                    <p class="mt-5 text-lg text-slate-200/80 sm:text-xl">
-                        <span class="font-mono text-cyber-blue/90">&gt;</span>
-                        <span id="typed-role" class="font-semibold text-slate-100">IT Engineer</span>
-                        <span id="typed-caret" class="ml-1 font-mono text-cyber-green">▍</span>
-                    </p>
-
-                    <p class="mt-5 max-w-2xl text-pretty text-slate-200/75">
-                        “Securing Systems. Optimizing Infrastructure. Building Resilient Environments.”
-                    </p>
-
-                    <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                        <a href="#projects"
-                            class="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyber-blue to-cyber-green px-6 py-3 text-sm font-semibold text-black shadow-glow transition hover:brightness-110">
-                            <i class="fa-solid fa-grid-2"></i>
-                            View Projects
-                            <i class="fa-solid fa-arrow-right text-black/70 transition group-hover:translate-x-0.5"></i>
-                        </a>
-                        <a href="Aayush_Ghising_Resume.txt" download="Aayush_Ghising_Resume.docx"
-                            class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyber-blue/40 hover:bg-white/10">
-                            <i class="fa-solid fa-download"></i>
-                            Download Resume
-                        </a>
-                        <div class="flex items-center gap-3 text-sm text-slate-200/70">
-                            <span class="inline-flex items-center gap-2"><i class="fa-solid fa-location-dot text-cyber-blue/90"></i>
-                                Nepal</span>
-                            <span class="hidden sm:inline text-white/10">|</span>
-                            <a class="inline-flex items-center gap-2 hover:text-white"
-                                href="mailto:aayushghising482@gmail.com"><i class="fa-solid fa-envelope text-cyber-green/90"></i>
-                                Email</a>
-                        </div>
-                    </div>
-
-                    <div class="mt-7 flex flex-wrap items-center gap-3">
-                        <a class="chip" href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank"
-                            rel="noreferrer">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a class="chip" href="https://github.com/AayushGhising824" target="_blank" rel="noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                        <a class="chip" href="#contact">
-                            <i class="fa-solid fa-paper-plane"></i> Contact
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5">
-                    <div class="glass-card p-6 sm:p-7" data-reveal>
-                        <div class="flex items-start justify-between gap-4">
-                            <div>
-                                <p class="font-mono text-xs tracking-widest text-slate-200/70">SECURITY CONSOLE</p>
-                                <h2 class="mt-2 text-xl font-bold">System Status</h2>
-                            </div>
-                            <span
-                                class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-xs text-slate-200/80">
-                                <span class="h-2 w-2 rounded-full bg-cyber-blue"></span>
-                                ACTIVE
-                            </span>
-                        </div>
-
-                        <div class="mt-6 space-y-4">
-                            <div class="metric">
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-slate-200/80">Linux Administration</span>
-                                    <span class="font-mono text-cyber-green">READY</span>
-                                </div>
-                                <div class="bar"><span style="width: 92%"></span></div>
-                            </div>
-                            <div class="metric">
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-slate-200/80">Networking</span>
-                                    <span class="font-mono text-cyber-green">ONLINE</span>
-                                </div>
-                                <div class="bar"><span style="width: 82%"></span></div>
-                            </div>
-                            <div class="metric">
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-slate-200/80">System Hardening</span>
-                                    <span class="font-mono text-cyber-green">ENABLED</span>
-                                </div>
-                                <div class="bar"><span style="width: 78%"></span></div>
-                            </div>
-                            <div class="metric">
-                                <div class="flex items-center justify-between text-sm">
-                                    <span class="text-slate-200/80">Application PenTesting</span>
-                                    <span class="font-mono text-cyber-blue">IN PROGRESS</span>
-                                </div>
-                                <div class="bar alt"><span style="width: 55%"></span></div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 rounded-xl border border-white/10 bg-black/30 p-4 font-mono text-xs text-slate-200/80">
-                            <p><span class="text-cyber-blue">$</span> whoami</p>
-                            <p class="mt-1">aayush_ghising</p>
-                            <p class="mt-3"><span class="text-cyber-blue">$</span> echo "Defense in Depth"</p>
-                            <p class="mt-1 text-cyber-green">Defense in Depth</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <!-- Background Shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-shape w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 top-10 left-10"></div>
+            <div class="floating-shape w-24 h-24 sm:w-36 sm:h-36 md:w-48 md:h-48 top-1/3 right-20" style="animation-delay: 2s;"></div>
+            <div class="floating-shape w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bottom-20 left-1/3" style="animation-delay: 4s;"></div>
+            <div class="parallax-shape w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 -top-20 -right-20" style="animation-delay: 1s;"></div>
+            <div class="parallax-shape w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 -bottom-20 -left-20" style="animation-delay: 3s;"></div>
         </div>
-    </header>
-
-    <!-- Projects (for CTA) -->
-    <section id="projects" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">FEATURED</p>
-                <h2 class="title">Projects</h2>
-                <p class="subtitle">A clean showcase area. Replace titles/links with your real work.</p>
-            </div>
-
-            <div class="mt-10 grid gap-6 md:grid-cols-3">
-                <article class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center justify-between">
-                        <span class="badge"><i class="fa-solid fa-shield-halved"></i> Hardening</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-200/40"></i>
-                    </div>
-                    <h3 class="mt-4 text-lg font-bold">Linux Server Hardening Playbook</h3>
-                    <p class="mt-2 text-sm text-slate-200/70">Baseline CIS-style checks, SELinux policy sanity, and secure service configurations for RHEL/CentOS.</p>
-                    <div class="mt-5 flex flex-wrap gap-2">
-                        <span class="tag">SELinux</span><span class="tag">SSH</span><span class="tag">Audit</span>
-                    </div>
-                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyber-blue hover:text-white"
-                        href="https://github.com/AayushGhising824" target="_blank" rel="noreferrer">View on GitHub <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </article>
-
-                <article class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center justify-between">
-                        <span class="badge"><i class="fa-solid fa-terminal"></i> Automation</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-200/40"></i>
-                    </div>
-                    <h3 class="mt-4 text-lg font-bold">Bash Backup Validator</h3>
-                    <p class="mt-2 text-sm text-slate-200/70">Automates backup verification, restoration tests, and health reporting for critical services.</p>
-                    <div class="mt-5 flex flex-wrap gap-2">
-                        <span class="tag">Bash</span><span class="tag">Cron</span><span class="tag">Reports</span>
-                    </div>
-                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyber-blue hover:text-white"
-                        href="https://github.com/AayushGhising824" target="_blank" rel="noreferrer">View on GitHub <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </article>
-
-                <article class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center justify-between">
-                        <span class="badge"><i class="fa-solid fa-network-wired"></i> Network</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-slate-200/40"></i>
-                    </div>
-                    <h3 class="mt-4 text-lg font-bold">Firewall Audit Toolkit</h3>
-                    <p class="mt-2 text-sm text-slate-200/70">Quickly enumerates rules, detects risky exposures, and produces remediation-ready change notes.</p>
-                    <div class="mt-5 flex flex-wrap gap-2">
-                        <span class="tag">firewalld</span><span class="tag">iptables</span><span class="tag">RBAC</span>
-                    </div>
-                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyber-blue hover:text-white"
-                        href="https://github.com/AayushGhising824" target="_blank" rel="noreferrer">View on GitHub <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About (with photo) -->
-    <section id="about" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">PROFILE</p>
-                <h2 class="title">About</h2>
-            </div>
-
-            <div class="mt-10 grid gap-6 lg:grid-cols-12 lg:items-start">
-                <div class="lg:col-span-4" data-reveal>
-                    <div class="glass-card p-6 hover-raise flex flex-col items-center text-center gap-4">
-                        <div class="relative">
-                            <div class="rounded-2xl border border-white/15 bg-black/40 p-1 shadow-glow">
-                                <img
-                                    src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_IMG-20241127-WA0041-96c982d4-5518-44d1-9b5d-400fdc0a4bde.png"
-                                    alt="Portrait of Aayush Ghising"
-                                    class="h-40 w-32 rounded-xl object-cover"
-                                    loading="lazy"
-                                />
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-xs font-mono tracking-[0.25em] text-slate-200/60">PROFILE</p>
-                            <h3 class="mt-1 text-lg font-semibold tracking-tight">AAYUSH GHISING</h3>
-                            <p class="mt-1 text-xs font-mono text-slate-200/70">IT Engineer · Linux System Administrator · Cybersecurity Enthusiast</p>
-                        </div>
-                        <div class="mt-1 flex flex-wrap justify-center gap-2">
-                            <span class="badge"><i class="fa-solid fa-location-dot"></i> Nepal</span>
-                            <span class="badge"><i class="fa-solid fa-award"></i> RHCSA</span>
-                            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Security Track</span>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Left Content - Professional Hero -->
+                <div class="space-y-6 lg:space-y-8 text-center lg:text-left">
+                    <div class="space-y-2">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-black leading-none">
+                            AAYUSH<br>
+                            GHISING
+                        </h1>
+                        <div class="text-xl sm:text-2xl md:text-3xl font-mono text-white">
+                            <span id="typing-text" class="typing-cursor"></span>
                         </div>
                     </div>
-                </div>
-
-                <div class="lg:col-span-8" data-reveal>
-                    <div class="glass-card p-7 sm:p-9">
-                        <p class="font-mono text-xs tracking-widest text-slate-200/70">PROFESSIONAL SUMMARY</p>
-                        <p class="mt-4 text-pretty text-base leading-relaxed text-slate-200/80 sm:text-lg">
-                            Motivated IT Engineer with hands-on experience in Linux systems, networking, and system administration. RHCSA certified with a strong foundation in cybersecurity principles and currently expanding expertise in application penetration testing. Passionate about securing systems, solving technical challenges, and continuously upgrading technical skills to stay ahead in the cybersecurity field.
+                    
+                    <!-- Professional Description -->
+                    <div class="bg-gradient-to-r from-white/5 to-transparent rounded-xl p-6 border border-white/10">
+                        <p class="text-base sm:text-lg text-gray-200 leading-relaxed">
+                            Building secure systems, networks, and infrastructure through strong Linux administration, system hardening, and cybersecurity practices.
                         </p>
+                    </div>
+                    
+                    <!-- Professional Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-center mt-8">
+                        <a href="#experience" class="btn-primary w-full sm:w-auto justify-center shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                            <i class="fas fa-briefcase"></i>
+                            View Experience
+                        </a>
+                        <a href="CV_Aayush_Ghising.pdf" download="CV_Aayush_Ghising.pdf" class="btn-secondary w-full sm:w-auto justify-center group relative overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                            <i class="fas fa-file-pdf text-white text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="ml-2">Download Resume</span>
+                            <div class="absolute inset-0 bg-gradient-to-r from-white/0 to-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </a>
+                        <a href="#contact" class="btn-secondary w-full sm:w-auto justify-center shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                            <i class="fas fa-message"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Professional Visual -->
+                <div class="relative">
+                    <div class="relative z-10">
+                        <!-- Professional Profile Frame -->
+                        <div class="relative max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+                            <!-- Main Profile Image -->
+                            <img src="profile.jpg" alt="Aayush Ghising" class="w-full rounded-full shadow-xl">
+                            
+                            <!-- White Circular Border -->
+                            <div class="absolute inset-0 rounded-full border-4 border-white shadow-lg pointer-events-none"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced Floating Elements -->
+                    <div class="absolute top-4 right-4 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                        <div class="w-4 h-4 bg-white rounded-full shadow-md"></div>
+                    </div>
+                    <div class="absolute bottom-4 left-4 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-md"></div>
+                    </div>
+                    <div class="absolute top-1/2 right-8 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <div class="w-5 h-5 bg-white rounded-full shadow-md"></div>
+                    </div>
+                    <div class="absolute bottom-8 right-6 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                        <div class="w-6 h-6 bg-white rounded-full shadow-md"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <div class="mt-7 grid gap-3 sm:grid-cols-2">
-                            <div class="mini-card">
-                                <p class="font-mono text-xs text-slate-200/60">PHONE</p>
-                                <p class="mt-1 text-sm font-semibold">9702075730 / 9743975286</p>
-                            </div>
-                            <div class="mini-card">
-                                <p class="font-mono text-xs text-slate-200/60">EMAIL</p>
-                                <p class="mt-1 text-sm font-semibold">aayushghising482@gmail.com</p>
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl md:text-6xl font-serif font-black text-white mb-4">About Me</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="max-w-5xl mx-auto">
+                    <div class="rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/20 shadow-2xl">
+                        <!-- Main Introduction -->
+                        <div class="text-center mb-8 lg:mb-12">
+                            <p class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 sm:mb-6 leading-relaxed">
+                                <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Cybersecurity Professional</span> & 
+                                <span class="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent">Linux Expert</span>
+                            </p>
+                            <p class="text-lg sm:text-xl text-white leading-relaxed max-w-4xl mx-auto font-medium">
+                                Motivated IT Engineer with strong hands-on experience in Linux system administration, networking, and infrastructure security. 
+                                <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-bold">RHCSA certified</span> and currently expanding expertise in application penetration testing and vulnerability assessment.
+                            </p>
+                        </div>
+                        
+                        <!-- Expertise Areas -->
+                        <div class="mb-8 lg:mb-12">
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Core Expertise</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                                <div class="rounded-2xl p-4 sm:p-6 border border-cyan-400/30 hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-server text-white text-lg sm:text-xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-white text-lg sm:text-xl">Linux Systems</h4>
+                                    </div>
+                                    <p class="text-cyan-50 font-medium text-sm sm:text-base">Secure Linux environments and system administration</p>
+                                </div>
+                                
+                                <div class="rounded-2xl p-4 sm:p-6 border border-purple-400/30 hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-shield-alt text-white text-lg sm:text-xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-white text-lg sm:text-xl">Security</h4>
+                                    </div>
+                                    <p class="text-purple-50 font-medium text-sm sm:text-base">System hardening and security best practices</p>
+                                </div>
+                                
+                                <div class="rounded-2xl p-4 sm:p-6 border border-green-400/30 hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                                            <i class="fas fa-code text-white text-lg sm:text-xl"></i>
+                                        </div>
+                                        <h4 class="font-bold text-white text-lg sm:text-xl">Automation</h4>
+                                    </div>
+                                    <p class="text-green-50 font-medium text-sm sm:text-base">Bash scripting and task automation</p>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="mt-7 flex flex-wrap gap-3">
-                            <a class="chip" href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank"
-                                rel="noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                            <a class="chip" href="https://github.com/AayushGhising824" target="_blank" rel="noreferrer"><i
-                                    class="fa-brands fa-github"></i> GitHub</a>
-                            <a class="chip" href="#contact"><i class="fa-solid fa-paper-plane"></i> Message</a>
+                        
+                        <!-- Detailed Skills -->
+                        <div class="mb-8 lg:mb-12">
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Technical Skills</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm sm:text-base"></i>
+                                    </div>
+                                    <span class="text-white font-semibold text-sm sm:text-base">Maintaining secure Linux environments</span>
+                                </div>
+                                <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm sm:text-base"></i>
+                                    </div>
+                                    <span class="text-white font-semibold text-sm sm:text-base">System hardening and patch management</span>
+                                </div>
+                                <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm sm:text-base"></i>
+                                    </div>
+                                    <span class="text-white font-semibold text-sm sm:text-base">Bash automation</span>
+                                </div>
+                                <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-white/20 hover:border-white/40 transition-colors">
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm sm:text-base"></i>
+                                    </div>
+                                    <span class="text-white font-semibold text-sm sm:text-base">Server performance monitoring</span>
+                                </div>
+                                <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-white/20 hover:border-white/40 transition-colors sm:col-span-2">
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm sm:text-base"></i>
+                                    </div>
+                                    <span class="text-white font-semibold text-sm sm:text-base">Infrastructure security practices</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -364,509 +513,810 @@
         </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">CAREER</p>
-                <h2 class="title">Professional Experience</h2>
-                <p class="subtitle">Expandable timeline cards with clean, technical detail.</p>
-            </div>
-
-            <div class="mt-10">
-                <div class="timeline" data-reveal>
-                    <div class="timeline-line" aria-hidden="true"></div>
-
-                    <details class="timeline-item glass-card hover-raise" open>
-                        <summary class="timeline-summary">
-                            <div>
-                                <p class="font-mono text-xs tracking-widest text-slate-200/70">Dec 2025 – Present</p>
-                                <h3 class="mt-1 text-lg font-bold">IT Engineer</h3>
-                                <p class="mt-1 text-sm text-cyber-blue/90">Software Shark Tech Pvt Ltd</p>
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12">Technical Skills</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Operating Systems -->
+                    <div class="rounded-xl p-4 sm:p-6 card-hover border border-white/20">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-3 flex items-center justify-center">
+                                <i class="fas fa-server text-white text-2xl"></i>
                             </div>
-                            <span class="timeline-pill">Expand</span>
-                        </summary>
-
-                        <div class="mt-5 grid gap-4 md:grid-cols-2">
-                            <ul class="list-inside list-disc space-y-2 text-sm text-slate-200/75">
-                                <li>Linux server management (RHEL/CentOS)</li>
-                                <li>RBAC implementation</li>
-                                <li>System monitoring & performance optimization</li>
-                                <li>Firewall configuration (firewalld/iptables)</li>
-                                <li>System hardening & SELinux</li>
-                                <li>Bash automation scripting</li>
-                            </ul>
-                            <ul class="list-inside list-disc space-y-2 text-sm text-slate-200/75">
-                                <li>Backup & restoration validation</li>
-                                <li>Kernel updates & patching</li>
-                                <li>L1 & L2 technical support</li>
-                                <li>Documentation & SOP creation</li>
-                                <li>Web app deployment on Linux</li>
-                                <li>Basic vulnerability assessment & remediation</li>
-                            </ul>
+                            <h3 class="font-bold text-base sm:text-lg text-white">Operating Systems</h3>
                         </div>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">ACADEMICS</p>
-                <h2 class="title">Education</h2>
-            </div>
-
-            <div class="mt-10 grid gap-6 lg:grid-cols-12">
-                <div class="lg:col-span-5" data-reveal>
-                    <div class="glass-card p-7">
-                        <h3 class="text-lg font-bold">Timeline</h3>
-                        <p class="mt-2 text-sm text-slate-200/70">A clean chronological view with a cyber-style rail.</p>
-                    </div>
-                </div>
-                <div class="lg:col-span-7" data-reveal>
-                    <div class="edu">
-                        <div class="edu-item glass-card p-6 hover-raise">
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">Diploma</p>
-                            <h4 class="mt-2 font-bold">Diploma in Computer Application</h4>
-                            <p class="mt-1 text-sm text-slate-200/70">Global Computer Training Center</p>
-                        </div>
-                        <div class="edu-item glass-card p-6 hover-raise">
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">2023</p>
-                            <h4 class="mt-2 font-bold">SEE — Sunrise English Boarding School</h4>
-                            <p class="mt-1 text-sm text-slate-200/70">Class of 2023</p>
-                        </div>
-                        <div class="edu-item glass-card p-6 hover-raise">
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">2080–20</p>
-                            <h4 class="mt-2 font-bold">SLC — Manakamana Secondary English Boarding School</h4>
-                            <p class="mt-1 text-sm text-slate-200/70">Foundational Education</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">CREDENTIALS</p>
-                <h2 class="title">Certifications</h2>
-            </div>
-
-            <div class="mt-10 grid gap-6 md:grid-cols-3">
-                <!-- RHCSA -->
-                <div class="glass-card p-7 hover-raise" data-reveal>
-                    <div class="flex items-start gap-4">
-                        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-black/60">
-                            <img
-                                src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_image-8a2fa8b4-8618-44ef-b63f-640abf78f17b.png"
-                                alt="Red Hat logo"
-                                class="h-8 w-8 object-contain"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div>
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">RED HAT</p>
-                            <h3 class="mt-1 text-lg font-bold">RHCSA</h3>
-                            <p class="mt-1 text-sm text-slate-200/70">Red Hat Certified System Administrator</p>
-                            <p class="mt-1 text-xs text-slate-200/60">Issued 2025</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex flex-wrap gap-2">
-                        <span class="tag">RHEL</span><span class="tag">Services</span><span class="tag">Storage</span><span class="tag">Users & RBAC</span>
-                    </div>
-                </div>
-
-                <!-- Red Hat System Administration II (RH134) -->
-                <div class="glass-card p-7 hover-raise" data-reveal>
-                    <div class="flex items-start gap-4">
-                        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-black/60">
-                            <img
-                                src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_image-8a2fa8b4-8618-44ef-b63f-640abf78f17b.png"
-                                alt="Red Hat logo"
-                                class="h-8 w-8 object-contain"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div>
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">RED HAT</p>
-                            <h3 class="mt-1 text-base font-bold">Red Hat System Administration II (RH134) – Ver. 10</h3>
-                            <p class="mt-1 text-xs text-slate-200/60">Issued Aug 2025</p>
-                            <p class="mt-3 text-sm text-slate-200/75"><span class="font-semibold">Skills:</span> Linux, Linux System Administration, +2 skills</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cisco Introduction to Cybersecurity -->
-                <div class="glass-card p-7 hover-raise" data-reveal>
-                    <div class="flex items-start gap-4">
-                        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-black/60">
-                            <img
-                                src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_image-95369fcd-532a-41c2-9347-46b429f57a5e.png"
-                                alt="Cisco logo"
-                                class="h-7 w-7 object-contain"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div>
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">CISCO</p>
-                            <h3 class="mt-1 text-base font-bold">Introduction to Cybersecurity</h3>
-                            <p class="mt-1 text-xs text-slate-200/60">Issued Feb 2026</p>
-                            <p class="mt-3 text-sm text-slate-200/75">Foundational concepts of threats, vulnerabilities, and basic cyber defense.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-6 grid gap-6 md:grid-cols-3">
-                <!-- Tally Certified -->
-                <div class="glass-card p-6 hover-raise md:col-span-1" data-reveal>
-                    <div class="flex items-start gap-4">
-                        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-black/60">
-                            <img
-                                src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_image-d55d6c0d-2fc6-4b66-bf6d-d640d88d420c.png"
-                                alt="Tally certification logo"
-                                class="h-7 w-7 object-contain"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div>
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">STP COMPUTER EDUCATION</p>
-                            <h3 class="mt-1 text-base font-bold">Tally Certified</h3>
-                            <p class="mt-1 text-xs text-slate-200/60">Issued Sep 2023 · Credential ID 86502</p>
-                            <p class="mt-3 text-sm text-slate-200/75"><span class="font-semibold">Skills:</span> Tally, Account Management</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ongoing security track summary -->
-                <div class="glass-card p-6 hover-raise md:col-span-2" data-reveal>
-                    <div class="flex items-center justify-between gap-4">
-                        <div>
-                            <p class="font-mono text-xs tracking-widest text-slate-200/70">SECURITY TRACK</p>
-                            <h3 class="mt-1 text-base font-bold">Applied Cybersecurity Learning</h3>
-                            <p class="mt-1 text-sm text-slate-200/70">Focused on practical web security, vulnerability assessment, and application testing.</p>
-                        </div>
-                        <i class="fa-solid fa-shield-halved text-3xl text-cyber-green/80"></i>
-                    </div>
-                    <div class="mt-4 grid gap-3 sm:grid-cols-2">
-                        <div class="mini-card">
-                            <p class="font-mono text-xs text-slate-200/60">DOMAIN</p>
-                            <p class="mt-1 text-sm font-semibold">Web Security Fundamentals</p>
-                        </div>
-                        <div class="mini-card">
-                            <p class="font-mono text-xs text-slate-200/60">DOMAIN</p>
-                            <p class="mt-1 text-sm font-semibold">Vulnerability Assessment</p>
-                        </div>
-                        <div class="mini-card sm:col-span-2">
-                            <p class="font-mono text-xs text-slate-200/60">STATUS</p>
-                            <p class="mt-1 text-sm font-semibold">Application Penetration Testing (In Progress)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">CAPABILITIES</p>
-                <h2 class="title">Technical Skills</h2>
-                <p class="subtitle">Interactive cards + animated skill bars.</p>
-            </div>
-
-            <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center gap-3">
-                        <span class="iconbox"><i class="fa-solid fa-microchip"></i></span>
-                        <h3 class="text-base font-bold">Operating Systems</h3>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-200/75">
-                        <li><span class="text-cyber-blue">•</span> Linux (RHEL/CentOS)</li>
-                    </ul>
-                    <div class="mt-5">
-                        <div class="skillbar" data-level="92"><span></span></div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center gap-3">
-                        <span class="iconbox"><i class="fa-solid fa-network-wired"></i></span>
-                        <h3 class="text-base font-bold">Networking</h3>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-200/75">
-                        <li><span class="text-cyber-blue">•</span> TCP/IP Fundamentals</li>
-                        <li><span class="text-cyber-blue">•</span> Network Configuration & Troubleshooting</li>
-                    </ul>
-                    <div class="mt-5">
-                        <div class="skillbar" data-level="82"><span></span></div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center gap-3">
-                        <span class="iconbox"><i class="fa-solid fa-shield-halved"></i></span>
-                        <h3 class="text-base font-bold">Cybersecurity</h3>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-200/75">
-                        <li><span class="text-cyber-green">•</span> System Hardening</li>
-                        <li><span class="text-cyber-green">•</span> Basic Security Practices</li>
-                        <li><span class="text-cyber-green">•</span> Application Penetration Testing (In Progress)</li>
-                    </ul>
-                    <div class="mt-5">
-                        <div class="skillbar alt" data-level="65"><span></span></div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center gap-3">
-                        <span class="iconbox"><i class="fa-solid fa-terminal"></i></span>
-                        <h3 class="text-base font-bold">Tools</h3>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-200/75">
-                        <li><span class="text-cyber-blue">•</span> Linux CLI Tools</li>
-                        <li><span class="text-cyber-blue">•</span> Microsoft Office Suite</li>
-                    </ul>
-                    <div class="mt-5">
-                        <div class="skillbar" data-level="76"><span></span></div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center gap-3">
-                        <span class="iconbox"><i class="fa-solid fa-bolt"></i></span>
-                        <h3 class="text-base font-bold">Core Strengths</h3>
-                    </div>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="pill">Problem Solving</span>
-                        <span class="pill">Analytical Thinking</span>
-                        <span class="pill">Technical Troubleshooting</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 hover-raise" data-reveal>
-                    <div class="flex items-center gap-3">
-                        <span class="iconbox"><i class="fa-solid fa-code"></i></span>
-                        <h3 class="text-base font-bold">Automation</h3>
-                    </div>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-200/75">
-                        <li><span class="text-cyber-blue">•</span> Bash automation scripting</li>
-                        <li><span class="text-cyber-blue">•</span> Documentation & SOP creation</li>
-                    </ul>
-                    <div class="mt-5">
-                        <div class="skillbar" data-level="74"><span></span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cybersecurity Workshop -->
-    <section id="cyber-workshop" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">IMPACT</p>
-                <h2 class="title">Cybersecurity Awareness Session</h2>
-            </div>
-
-            <div class="mt-10 grid gap-6 lg:grid-cols-2">
-                <div class="glass-card p-7 hover-raise" data-reveal>
-                    <p class="text-sm text-slate-200/80">
-                        I was honored to deliver a Cyber Awareness Session to the youth of the Milan Community, focusing on real-world online threats, digital responsibility, and practical strategies for staying safe in today’s connected world.
-                    </p>
-                    <p class="mt-4 text-sm text-slate-200/80">
-                        As technology becomes an essential part of everyday life, cyber awareness is no longer optional. During the session, we covered online privacy, data protection, strong password practices, social engineering risks, and responsible digital behavior. The goal was clear: to equip young individuals with the knowledge and confidence to protect themselves and make informed decisions online.
-                    </p>
-                    <p class="mt-4 text-sm text-slate-200/80">
-                        The engagement, curiosity, and thoughtful questions from the Milan Community Youth made the session truly impactful. It was a privilege to contribute to building a more informed and security-conscious generation. Educating and empowering youth in cybersecurity is not just an initiative; it is a responsibility.
-                    </p>
-                </div>
-                <div class="glass-card p-4 hover-raise" data-reveal>
-                    <div class="grid gap-3">
-                        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-                            <img
-                                src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_IMG_6940-8e3e4591-811f-4bb2-9fbd-b66f4f10999d.png"
-                                alt="Aayush Ghising delivering a cyber awareness talk on stage"
-                                class="w-full object-cover"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div class="overflow-hidden rounded-2xl border border-white/10 bg-black/40">
-                            <img
-                                src="file:///C:/Users/Luff/.cursor/projects/c-Users-Luff-Documents-Personal/assets/c__Users_Luff_AppData_Roaming_Cursor_User_workspaceStorage_3a13879080f8e760676effd3883a1e05_images_IMG_6933-e82b438c-ecbb-42d8-bfa8-3f142ce597ab.png"
-                                alt="Participants attending the cyber awareness session"
-                                class="w-full object-cover"
-                                loading="lazy"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learning Focus -->
-    <section id="learning" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">ACTIVE</p>
-                <h2 class="title">Current Learning Focus</h2>
-            </div>
-
-            <div class="mt-10 grid gap-6 lg:grid-cols-3">
-                <div class="glass-card p-7 hover-raise lg:col-span-2" data-reveal>
-                    <h3 class="text-lg font-bold">Security Growth Mode</h3>
-                    <p class="mt-2 text-sm text-slate-200/70">Sharpening practical skills for offensive and defensive security workflows.</p>
-                    <div class="mt-6 grid gap-3 sm:grid-cols-2">
-                        <div class="mini-card"><i class="fa-solid fa-bug mr-2 text-cyber-blue/90"></i> Application Penetration Testing</div>
-                        <div class="mini-card"><i class="fa-solid fa-globe mr-2 text-cyber-green/90"></i> Web Security Fundamentals</div>
-                        <div class="mini-card sm:col-span-2"><i class="fa-solid fa-triangle-exclamation mr-2 text-cyber-blue/90"></i> Vulnerability Assessment Techniques</div>
-                    </div>
-                </div>
-                <div class="glass-card p-7 hover-raise" data-reveal>
-                    <p class="font-mono text-xs tracking-widest text-slate-200/70">FOCUS</p>
-                    <h3 class="mt-2 text-lg font-bold">Daily Loop</h3>
-                    <ol class="mt-4 space-y-2 text-sm text-slate-200/75">
-                        <li><span class="text-cyber-green">01</span> Learn concepts</li>
-                        <li><span class="text-cyber-green">02</span> Practice labs</li>
-                        <li><span class="text-cyber-green">03</span> Document findings</li>
-                        <li><span class="text-cyber-green">04</span> Repeat + refine</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Objective -->
-    <section id="objective" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">MISSION</p>
-                <h2 class="title">Career Objective</h2>
-            </div>
-            <div class="mt-10 glass-card p-7 sm:p-9 hover-raise" data-reveal>
-                <p class="text-pretty text-base leading-relaxed text-slate-200/80 sm:text-lg">
-                    To grow as a cybersecurity professional by applying practical system administration and security skills in a challenging environment while continuously learning advanced penetration testing and security defense techniques.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section-wrap">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="section-head" data-reveal>
-                <p class="kicker">CONNECT</p>
-                <h2 class="title">Contact</h2>
-                <p class="subtitle">Frontend-only form that opens your email client with a prefilled message.</p>
-            </div>
-
-            <div class="mt-10 grid gap-6 lg:grid-cols-12">
-                <div class="lg:col-span-5" data-reveal>
-                    <div class="glass-card p-7">
-                        <h3 class="text-lg font-bold">Direct</h3>
-                        <div class="mt-5 space-y-3 text-sm text-slate-200/75">
-                            <div class="flex items-center gap-3">
-                                <span class="iconbox"><i class="fa-solid fa-phone"></i></span>
-                                <span>9702075730 / 9743975286</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="iconbox"><i class="fa-solid fa-envelope"></i></span>
-                                <a class="hover:text-white" href="mailto:aayushghising482@gmail.com">aayushghising482@gmail.com</a>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="iconbox"><i class="fa-solid fa-location-dot"></i></span>
-                                <span>Nepal</span>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 flex flex-wrap gap-3">
-                            <a class="chip" href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank"
-                                rel="noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                            <a class="chip" href="https://github.com/AayushGhising824" target="_blank" rel="noreferrer"><i
-                                    class="fa-brands fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7" data-reveal>
-                    <form id="contact-form" class="glass-card p-7">
-                        <div class="grid gap-4 sm:grid-cols-2">
-                            <div>
-                                <label class="label" for="name">Name</label>
-                                <input id="name" name="name" type="text" class="input" placeholder="Your name" required>
-                            </div>
-                            <div>
-                                <label class="label" for="email">Email</label>
-                                <input id="email" name="email" type="email" class="input" placeholder="you@example.com" required>
-                            </div>
-                        </div>
+                        <ul class="space-y-2 text-white text-sm sm:text-base text-center">
+                            <li>Linux System Administration</li>
+                            <li class="text-xs sm:text-sm text-white">(RHEL / CentOS)</li>
+                        </ul>
                         <div class="mt-4">
-                            <label class="label" for="subject">Subject</label>
-                            <input id="subject" name="subject" type="text" class="input" placeholder="Project inquiry / Collaboration / Hiring">
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 0%;" data-progress="90%"></div>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <!-- Networking -->
+                    <div class="rounded-xl p-4 sm:p-6 card-hover border border-white/20">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl mb-3 flex items-center justify-center">
+                                <i class="fas fa-network-wired text-white text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-base sm:text-lg text-white">Networking</h3>
+                        </div>
+                        <ul class="space-y-2 text-white text-sm sm:text-base text-center">
+                            <li>TCP/IP Fundamentals</li>
+                            <li>Network Configuration</li>
+                            <li>Network Troubleshooting</li>
+                        </ul>
                         <div class="mt-4">
-                            <label class="label" for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" class="input" placeholder="Write your message..." required></textarea>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 0%;" data-progress="85%"></div>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <!-- Cybersecurity -->
+                    <div class="rounded-xl p-4 sm:p-6 card-hover border border-white/20">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl mb-3 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-base sm:text-lg text-white">Cybersecurity</h3>
+                        </div>
+                        <ul class="space-y-2 text-white text-sm sm:text-base text-center">
+                            <li>System Hardening</li>
+                            <li>Security Best Practices</li>
+                            <li>App Pentesting (Learning)</li>
+                        </ul>
+                        <div class="mt-4">
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 0%;" data-progress="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools -->
+                    <div class="rounded-xl p-4 sm:p-6 card-hover border border-white/20">
+                        <div class="flex flex-col items-center text-center mb-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl mb-3 flex items-center justify-center">
+                                <i class="fas fa-tools text-white text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-base sm:text-lg text-white">Tools</h3>
+                        </div>
+                        <ul class="space-y-2 text-white text-sm sm:text-base text-center">
+                            <li>Linux CLI Tools</li>
+                            <li>Bash Scripting</li>
+                            <li>Microsoft Office</li>
+                        </ul>
+                        <div class="mt-4">
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 0%;" data-progress="95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Core Strengths -->
+                <div class="mt-16">
+                    <h3 class="text-3xl font-serif font-bold text-center mb-4">Core Strengths</h3>
+                    <p class="text-center text-white mb-8 max-w-2xl mx-auto">
+                        Essential skills and competencies that drive success in cybersecurity and system administration
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                        <div class="bg-white-glass rounded-xl p-6 text-center card-hover group">
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-lightbulb text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Problem Solving</h4>
+                            <p class="text-sm text-white">Analytical approach to complex technical challenges</p>
+                        </div>
+                        
+                        <div class="bg-white-glass rounded-xl p-6 text-center card-hover group">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Analytical Thinking</h4>
+                            <p class="text-sm text-white">Strategic analysis and logical reasoning</p>
+                        </div>
+                        
+                        <div class="bg-white-glass rounded-xl p-6 text-center card-hover group">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-tools text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Technical Troubleshooting</h4>
+                            <p class="text-sm text-white">Efficient diagnostic and resolution skills</p>
+                        </div>
+                        
+                        <div class="bg-white-glass rounded-xl p-6 text-center card-hover group">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-users text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-white mb-2">Team Collaboration</h4>
+                            <p class="text-sm text-white">Effective teamwork and communication</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 text-center">
+                        <div class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full text-white font-medium">
+                            <i class="fas fa-star"></i>
+                            <span>Adaptable & Quick Learner</span>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                            <button type="submit"
-                                class="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyber-blue to-cyber-green px-6 py-3 text-sm font-semibold text-black shadow-glow transition hover:brightness-110">
-                                <i class="fa-solid fa-paper-plane"></i>
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-white mb-4">Professional Experience</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="max-w-5xl mx-auto space-y-8">
+                    <!-- Software Shark Tech -->
+                    <div class="bg-white-glass rounded-2xl shadow-xl p-8 card-hover border border-white/20">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                            <div class="lg:col-span-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">IT Engineer</h3>
+                                        <p class="text-lg text-cyan-400 font-medium">Software Shark Tech Pvt Ltd</p>
+                                    </div>
+                                    <div class="mt-2 sm:mt-0">
+                                        <span class="text-gray-300 font-medium bg-white/10 px-4 py-2 rounded-full">Dec 2025 – Present</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        <div class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-cyan-400 mt-1 text-sm"></i>
+                                            <span class="text-gray-300">Linux Server Management (RHEL/CentOS)</span>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-cyan-400 mt-1 text-sm"></i>
+                                            <span class="text-gray-300">System Security & Hardening</span>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-cyan-400 mt-1 text-sm"></i>
+                                            <span class="text-gray-300">Network Configuration & Security</span>
+                                        </div>
+                                        <div class="flex items-start gap-2">
+                                            <i class="fas fa-chevron-right text-cyan-400 mt-1 text-sm"></i>
+                                            <span class="text-gray-300">Bash Scripting & Automation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <img src="software.jpg" alt="Software Shark Tech" class="w-32 h-32 rounded-xl object-cover border-2 border-white/20 shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NTC Experience -->
+                    <div class="bg-white-glass rounded-2xl shadow-xl p-8 card-hover border border-white/20">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                            <div class="lg:col-span-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">Junior Instructor – Linux System Administration Training</h3>
+                                        <p class="text-lg text-cyan-400 font-medium">Nepal Telecom (NTC)</p>
+                                        <p class="text-gray-400">Location: Nepal</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <h4 class="text-lg font-semibold text-white mb-3">Key Responsibilities:</h4>
+                                    <div class="grid grid-cols-1 gap-3">
+                                        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-chalkboard-teacher text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-300 font-medium">Assisted in Linux system administration training sessions</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-users text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-300 font-medium">Guided participants on Linux fundamentals and system management</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-terminal text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-300 font-medium">Demonstrated practical commands and system configuration</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <img src="ntc.jpg" alt="Nepal Telecom" class="w-32 h-32 rounded-xl object-cover border-2 border-white/20 shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Center Visit Experience -->
+                    <div class="bg-white-glass rounded-2xl shadow-xl p-8 card-hover border border-white/20">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                            <div class="lg:col-span-2">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">Data Center Visit – National Infrastructure Exposure</h3>
+                                        <p class="text-lg text-cyan-400 font-medium">Nepal Telecom (NTC)</p>
+                                        <p class="text-gray-400">National Data Center</p>
+                                    </div>
+                                    <div class="mt-2 sm:mt-0">
+                                        <span class="text-gray-300 font-medium bg-white/10 px-4 py-2 rounded-full">Infrastructure Tour</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <h4 class="text-lg font-semibold text-white mb-3">Key Learnings:</h4>
+                                    <div class="grid grid-cols-1 gap-3">
+                                        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-building text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-300 font-medium">Visited the national data center of Nepal Telecom</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-network-wired text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-300 font-medium">Learned about large scale server infrastructure and network architecture</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-chart-line text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-gray-300 font-medium">Observed monitoring systems, redundancy mechanisms, and operational workflows</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center">
+                                <div class="grid grid-cols-1 gap-3">
+                                    <img src="Data Center.jpg" alt="Data Center" class="w-32 h-32 rounded-xl object-cover border-2 border-white/20 shadow-lg">
+                                    <img src="Durbar.jpg" alt="Durbar" class="w-32 h-32 rounded-xl object-cover border-2 border-white/20 shadow-lg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12">Certifications</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white-glass rounded-2xl p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-red-600 rounded-bl-full flex items-center justify-center">
+                            <i class="fas fa-hat-cowboy text-white text-2xl"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="font-bold text-xl text-white mb-2">RHCSA</h3>
+                            <p class="text-white mb-4">Red Hat Certified System Administrator</p>
+                            <div class="text-sm text-white">
+                                Industry-recognized Linux administration certification
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white-glass rounded-2xl p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-blue-600 rounded-bl-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="font-bold text-xl text-white mb-2">Introduction to Cybersecurity</h3>
+                            <p class="text-white mb-4">Cisco Networking Academy</p>
+                            <div class="text-sm text-white">
+                                Issued February 2026
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white-glass rounded-2xl p-8 card-hover relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-green-600 rounded-bl-full flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="font-bold text-xl text-white mb-2">Computer Application</h3>
+                            <p class="text-white mb-4">STP Computer Education</p>
+                            <div class="text-sm text-white">
+                                Professional Training Certification
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybersecurity Workshop Section -->
+    <section id="workshop" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-white mb-4">Cybersecurity Workshop</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="max-w-5xl mx-auto">
+                    <div class="rounded-3xl shadow-2xl overflow-hidden card-hover border border-white/20 bg-gradient-to-br from-white/5 to-white/10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                            <!-- Workshop Media -->
+                            <div class="relative h-80 md:h-auto min-h-[400px]">
+                                <!-- Workshop Photo -->
+                                <img src="cyberawareness.jpg" alt="Cybersecurity Workshop" class="w-full h-full object-cover rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
+                                
+                                <!-- Photo Overlay Effects -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none"></div>
+                                <div class="absolute bottom-6 left-6 text-white">
+                                    <div class="bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                                        <i class="fas fa-camera mr-2"></i>Workshop
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Workshop Content -->
+                            <div class="p-10 bg-gradient-to-br from-white/5 to-transparent">
+                                <!-- Cybersecurity Logos -->
+                                <div class="mb-6">
+                                    <h4 class="font-bold text-xl text-white mb-4 text-center">Partnered With</h4>
+                                    <div class="flex flex-wrap justify-center items-center gap-6 mb-8">
+                                        <div class="px-4 py-2 bg-white/10 rounded-xl">
+                                            <span class="text-white font-bold text-lg">Milan Community</span>
+                                        </div>
+                                        <div class="px-4 py-2 bg-white/10 rounded-xl">
+                                            <span class="text-white font-bold text-lg">Cybersecurity Hub</span>
+                                        </div>
+                                        <div class="px-4 py-2 bg-white/10 rounded-xl">
+                                            <span class="text-white font-bold text-lg">Security Alliance</span>
+                                        </div>
+                                        <div class="px-4 py-2 bg-white/10 rounded-xl">
+                                            <span class="text-white font-bold text-lg">Tech Institute</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                    </div>
+                                    <span class="text-white font-semibold text-lg">Sarlahi, Nepal</span>
+                                </div>
+                                
+                                <h3 class="text-3xl font-bold text-white mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Cybersecurity Awareness Program</h3>
+                                
+                                <p class="text-gray-100 leading-relaxed mb-8 text-lg">
+                                    This workshop showcases a comprehensive cybersecurity awareness program conducted among the youth of Sarlahi, Nepal. An initiative to educate and empower young people with essential cybersecurity knowledge and practical skills to stay safe in the digital world.
+                                </p>
+                                
+                                <div class="space-y-6 mb-8">
+                                    <h4 class="font-bold text-xl text-white mb-4 flex items-center gap-2">
+                                        <i class="fas fa-list-check text-cyan-400"></i>
+                                        Workshop Topics Covered:
+                                    </h4>
+                                    <div class="grid grid-cols-1 gap-3">
+                                        <div class="flex items-start gap-3 p-3 bg-white/10 rounded-xl border border-white/20">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-check text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-white font-medium">Fundamentals of cybersecurity and online threats</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/10 rounded-xl border border-white/20">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-check text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-white font-medium">Safe browsing practices and password security</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/10 rounded-xl border border-white/20">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-check text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-white font-medium">Social engineering awareness and prevention</span>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-3 bg-white/10 rounded-xl border border-white/20">
+                                            <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <i class="fas fa-check text-white text-sm"></i>
+                                            </div>
+                                            <span class="text-white font-medium">Mobile security and app safety</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl p-6 border border-cyan-400/30">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-users text-white text-2xl"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white text-lg mb-1">Impact</p>
+                                            <p class="text-gray-100">Educated 100+ youth and senior citizens on cybersecurity fundamentals, safe browsing practices, and protection against online threats.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-wrap gap-3 mt-8">
+                                    <span class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full text-sm font-bold shadow-lg">Cybersecurity Awareness</span>
+                                    <span class="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-sm font-bold shadow-lg">Community Outreach</span>
+                                    <span class="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full text-sm font-bold shadow-lg">Digital Literacy</span>
+                                    <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-sm font-bold shadow-lg">Youth Education</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12">Education</h2>
+                
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="bg-white-glass rounded-xl p-6 card-hover">
+                        <h3 class="font-bold text-lg text-white">Diploma in Computer Application</h3>
+                        <p class="text-white">Global Computer Training Center</p>
+                    </div>
+                    
+                    <div class="bg-white-glass rounded-xl p-6 card-hover">
+                        <h3 class="font-bold text-lg text-white">SEE</h3>
+                        <p class="text-white">Sunrise English Boarding School</p>
+                    </div>
+                    
+                    <div class="bg-white-glass rounded-xl p-6 card-hover">
+                        <h3 class="font-bold text-lg text-white">SLC</h3>
+                        <p class="text-white">Manakamana Secondary English Boarding School</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Learning Section -->
+    <section id="learning" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-white mb-4">Current Learning</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="rounded-2xl p-8 border border-cyan-400/30 hover:scale-105 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-bug text-white text-3xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl text-white mb-3">Application Penetration Testing</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Advanced techniques for identifying and exploiting vulnerabilities in web applications</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rounded-2xl p-8 border border-purple-400/30 hover:scale-105 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-globe text-white text-3xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl text-white mb-3">Web Security Fundamentals</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Core concepts and best practices for securing web applications and infrastructure</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rounded-2xl p-8 border border-green-400/30 hover:scale-105 transition-all duration-300 group">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-search text-white text-3xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl text-white mb-3">Vulnerability Assessment Techniques</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Systematic approaches to identifying, analyzing, and prioritizing security vulnerabilities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <div class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-white font-medium">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Continuous Learning & Professional Development</span>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Objective Section -->
+    <section id="objective" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <h2 class="text-4xl font-serif font-bold text-center mb-12">Career Objective</h2>
+                <div class="bg-white-glass rounded-2xl shadow-xl p-8 text-center">
+                    <p class="text-lg text-white italic leading-relaxed">
+                        "To grow as a cybersecurity professional by applying strong system administration and security knowledge while continuously developing advanced penetration testing and infrastructure defense skills."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-white mb-4">Contact</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-2">Name</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 focus:bg-white/20 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-2">Email</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 focus:bg-white/20 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-white mb-2">Message</label>
+                                <textarea name="message" rows="4" required class="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 focus:bg-white/20 transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full justify-center">
+                                <i class="fas fa-paper-plane"></i>
                                 Send Message
-                                <span class="text-black/70 transition group-hover:translate-x-0.5"><i
-                                        class="fa-solid fa-arrow-right"></i></span>
                             </button>
-                            <p class="text-xs text-slate-200/60">Tip: This form uses <span class="font-mono">mailto:</span> (frontend only).</p>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <div class="rounded-2xl p-8 border border-white/20 bg-gradient-to-br from-white/5 to-white/10">
+                            <h3 class="font-bold text-2xl mb-6 text-white">Get in Touch</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4 p-4 bg-white/10 rounded-xl border border-white/20">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-user text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Name</p>
+                                        <p class="text-white font-semibold">Aayush Ghising</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 p-4 bg-white/10 rounded-xl border border-white/20">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Location</p>
+                                        <p class="text-white font-semibold">Nepal</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 p-4 bg-white/10 rounded-xl border border-white/20">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Phone</p>
+                                        <p class="text-white font-semibold">9702075730</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4 p-4 bg-white/10 rounded-xl border border-white/20">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-300">Email</p>
+                                        <p class="text-white font-semibold text-sm">root@aayushghising.com.np</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                        
+                        <!-- Social Links -->
+                        <div class="flex gap-4 justify-center lg:justify-start">
+                            <a href="https://github.com/AayushGhising824" target="_blank" class="w-14 h-14 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl flex items-center justify-center hover:scale-110 transition-transform border border-white/20">
+                                <i class="fab fa-github text-white text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank" class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center hover:scale-110 transition-transform border border-white/20">
+                                <i class="fab fa-linkedin text-white text-xl"></i>
+                            </a>
+                            <a href="mailto:root@aayushghising.com.np" class="w-14 h-14 bg-gradient-to-br from-red-600 to-red-800 rounded-xl flex items-center justify-center hover:scale-110 transition-transform border border-white/20">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="border-t border-white/10 py-10">
-        <div
-            class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-center sm:flex-row sm:px-6 sm:text-left">
-            <div class="font-mono text-xs tracking-widest text-slate-200/70">
-                Built with Passion for Cybersecurity
-            </div>
-            <div class="flex items-center gap-4 text-sm text-slate-200/70">
-                <a class="hover:text-white" href="#hero">Top</a>
-                <span class="text-white/10">|</span>
-                <a class="hover:text-white" href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank"
-                    rel="noreferrer">LinkedIn</a>
-                <a class="hover:text-white" href="https://github.com/AayushGhising824" target="_blank"
-                    rel="noreferrer">GitHub</a>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>© 2026 Aayush Ghising</p>
+                    <p class="text-gray-400 text-sm">Cybersecurity | Linux | Infrastructure Security</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://github.com/AayushGhising824" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aayush-ghising-21324227b/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Aayush Ghising",
-            "jobTitle": "IT Engineer",
-            "address": { "@type": "PostalAddress", "addressCountry": "NP" },
-            "email": "mailto:aayushghising482@gmail.com",
-            "telephone": ["9702075730", "9743975286"],
-            "url": "https://www.linkedin.com/in/aayush-ghising-21324227b/",
-            "sameAs": ["https://github.com/AayushGhising824"]
+    <!-- JavaScript -->
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            const darkIcon = themeToggle.querySelector('.theme-icon-dark');
+            const lightIcon = themeToggle.querySelector('.theme-icon-light');
+            
+            if (theme === 'light') {
+                darkIcon.style.display = 'block';
+                lightIcon.style.display = 'none';
+            } else {
+                darkIcon.style.display = 'none';
+                lightIcon.style.display = 'block';
+            }
         }
+        
+        // Typing Animation
+        const typingTexts = [
+            'IT Engineer'
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+        
+        function typeText() {
+            const currentText = typingTexts[textIndex];
+            
+            if (!isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeText, 2000);
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % typingTexts.length;
+                }
+            }
+            
+            setTimeout(typeText, isDeleting ? 50 : 100);
+        }
+        
+        typeText();
+        
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                    
+                    // Animate skill progress bars
+                    const progressBars = element.querySelectorAll('.skill-progress-bar');
+                    progressBars.forEach(bar => {
+                        const progress = bar.getAttribute('data-progress');
+                        setTimeout(() => {
+                            bar.style.width = progress;
+                        }, 200);
+                    });
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', reveal);
+        reveal();
+        
+        // Smooth Scrolling for navigation links only
+        document.querySelectorAll('a[href^="#"]:not([href*="mailto"])').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxShapes = document.querySelectorAll('.parallax-shape');
+            
+            parallaxShapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.1);
+                shape.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+        
+        // Contact Form
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            
+            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+            this.reset();
+        });
     </script>
-
-    <script src="script.js" defer></script>
 </body>
-
 </html>
-
